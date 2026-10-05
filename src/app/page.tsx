@@ -1,5 +1,6 @@
 import { Header } from '@/components/layout/Header';
 import { HeroSection } from '@/components/sections/HeroSection';
+import { FeatureBanner } from '@/components/sections/FeatureBanner';
 import { HowItWorksSection } from '@/components/sections/HowItWorksSection';
 import { FeaturesSection } from '@/components/sections/FeaturesSection';
 import { CategoriesSection } from '@/components/sections/CategoriesSection';
@@ -15,6 +16,7 @@ export default function Home() {
       <Header />
       <main>
         <HeroSection />
+        <FeatureBanner />
         <HowItWorksSection />
         <FeaturesSection />
         <CategoriesSection />

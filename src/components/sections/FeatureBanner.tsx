@@ -37,7 +37,7 @@ export function FeatureBanner() {
   ];
 
   return (
-    <section className="w-full bg-[#f1f8eb] py-8">
+    <section className="w-full bg-[#F3FAE6] py-8">
       <Container>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
           {features.map((feature) => (

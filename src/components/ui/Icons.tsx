@@ -132,3 +132,21 @@ export const BikeIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <path d="M15 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-3 11.5V14l-3-3 4-3 2 3h2"></path>
   </svg>
 );
+
+export const BagIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <path d="M16 10a4 4 0 0 1-8 0"></path>
+  </svg>
+);
+
+export const SparklesIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M21 10s-3-1-5-3-3-5-3-5-1 3-3 5-5 3-5 3 3 1 5 3 3 5 3 5 1-3 3-5 5-3 5-3z"></path>
+    <path d="M4 4l1.5 1.5"></path>
+    <path d="M4 20l1.5-1.5"></path>
+    <path d="M20 4l-1.5 1.5"></path>
+    <path d="M20 20l-1.5-1.5"></path>
+  </svg>
+);
