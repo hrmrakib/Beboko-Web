@@ -4,6 +4,7 @@ import { FeatureBanner } from '@/components/sections/FeatureBanner';
 import { HowItWorksSection } from '@/components/sections/HowItWorksSection';
 import { FeaturesSection } from '@/components/sections/FeaturesSection';
 import { CategoriesSection } from '@/components/sections/CategoriesSection';
+import { ConnectivitySection } from '@/components/sections/ConnectivitySection';
 import { LocalDeliverySection } from '@/components/sections/LocalDeliverySection';
 import { MapSection } from '@/components/sections/MapSection';
 import { DownloadSection } from '@/components/sections/DownloadSection';
@@ -20,6 +21,7 @@ export default function Home() {
         <HowItWorksSection />
         <FeaturesSection />
         <CategoriesSection />
+        <ConnectivitySection />
         <LocalDeliverySection />
         <MapSection />
         <DownloadSection />

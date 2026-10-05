@@ -3,9 +3,9 @@ import { Container } from '../layout/Container';
 
 export function LocalDeliverySection() {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-12 bg-white">
       <Container>
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-8">
           <h2 className="text-sm font-bold text-orange-500 tracking-wider uppercase mb-3">A Little Real-World Community</h2>
           <h3 className="text-3xl md:text-4xl font-bold text-stone-900 mb-6">Built for Local Delivery</h3>
           <p className="text-stone-600 text-lg">
