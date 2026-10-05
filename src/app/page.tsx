@@ -10,6 +10,7 @@ import { MapSection } from '@/components/sections/MapSection';
 import { BusinessSection } from '@/components/sections/BusinessSection';
 import { StatsSection } from '@/components/sections/StatsSection';
 import { DashboardSection } from '@/components/sections/DashboardSection';
+import { DeliveryPartnerSection } from '@/components/sections/DeliveryPartnerSection';
 import { Footer } from '@/components/layout/Footer';
 
 export default function Home() {
@@ -28,6 +29,7 @@ export default function Home() {
         <BusinessSection />
         <StatsSection />
         <DashboardSection />
+        <DeliveryPartnerSection />
       </main>
       <Footer />
     </>

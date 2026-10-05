@@ -21,11 +21,11 @@ export function DashboardSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           
           {/* Left Side: Mockup Image */}
-          <div className="order-2 lg:order-1 relative flex justify-center lg:justify-start w-full mt-10 lg:mt-0">
+          <div className="order-2 lg:order-1 relative flex justify-center w-full mt-10 lg:mt-0">
             <img 
               src="/images/dashboard-phone.png" 
               alt="Dar Dar Vendor Dashboard Mockup" 
-              className="w-full max-w-[600px] lg:max-w-none lg:w-[125%] xl:w-[135%] h-auto object-contain lg:-ml-[10%] xl:-ml-[15%]"
+              className="w-full max-w-[450px] lg:max-w-[550px] h-auto object-contain"
             />
           </div> 
           
