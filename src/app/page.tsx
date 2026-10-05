@@ -7,8 +7,9 @@ import { CategoriesSection } from '@/components/sections/CategoriesSection';
 import { ConnectivitySection } from '@/components/sections/ConnectivitySection';
 import { LocalDeliverySection } from '@/components/sections/LocalDeliverySection';
 import { MapSection } from '@/components/sections/MapSection';
-import { DownloadSection } from '@/components/sections/DownloadSection';
+import { BusinessSection } from '@/components/sections/BusinessSection';
 import { StatsSection } from '@/components/sections/StatsSection';
+import { DashboardSection } from '@/components/sections/DashboardSection';
 import { Footer } from '@/components/layout/Footer';
 
 export default function Home() {
@@ -24,8 +25,9 @@ export default function Home() {
         <ConnectivitySection />
         <LocalDeliverySection />
         <MapSection />
-        <DownloadSection />
+        <BusinessSection />
         <StatsSection />
+        <DashboardSection />
       </main>
       <Footer />
     </>

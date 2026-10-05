@@ -3,48 +3,66 @@ import { Container } from '../layout/Container';
 
 export function StatsSection() {
   return (
-    <section className="py-16 bg-stone-800 text-white relative">
+    <section className="py-20 lg:py-28 bg-[#333333] overflow-hidden">
       <Container>
-        <div className="flex flex-col md:flex-row items-center justify-between gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           
-          <div className="flex-1">
-            <h2 className="text-6xl md:text-8xl font-black text-lime-500 mb-2">95%</h2>
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">On-Time Delivery</h3>
-            <p className="text-stone-400 max-w-md">
-              We take pride in our punctuality. The vast majority of our orders arrive exactly when promised or even earlier.
+          {/* Left Column: Text & CTA */}
+          <div>
+            <h2 className="text-[7rem] md:text-[9rem] font-black text-[#75B737] leading-none tracking-tighter mb-4">
+              95%
+            </h2>
+            <h3 className="text-[2rem] md:text-[2.5rem] font-bold text-white mb-4 leading-tight">
+              Keep 95% of Your Sales.
+            </h3>
+            <p className="text-[#E0E0E0] text-[17px] leading-relaxed max-w-md mb-8">
+              Dar Dar retains 5% as a platform fee, while vendors receive 95% of their sales.
             </p>
+            <button className="bg-white hover:bg-stone-100 text-[#323232] px-7 py-3.5 rounded-full text-[15px] font-bold inline-flex items-center transition-colors">
+              Join Dar Dar as a Vendor
+            </button>
           </div>
 
-          <div className="flex-1 w-full bg-white rounded-3xl p-6 shadow-xl relative overflow-hidden">
-             <div className="flex flex-col h-full gap-4 relative z-10">
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-stone-900 font-bold text-lg">Delivery Success Rate</span>
-                  <span className="text-stone-500 text-sm">Last 30 days</span>
-                </div>
+          {/* Right Column: Stats Card */}
+          <div className="w-full">
+            <div className="bg-white rounded-[24px] lg:rounded-[32px] p-8 md:p-10 shadow-2xl">
+              
+              <div className="mb-8">
+                <span className="text-[#666666] text-[13px] font-bold block mb-1">
+                  Customer order
+                </span>
+                <span className="text-[#323232] text-[2.5rem] md:text-5xl font-black leading-none tracking-tight">
+                  100%
+                </span>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 
-                <div className="flex items-end gap-2 h-32">
-                  {[40, 60, 50, 80, 90, 70, 95].map((height, i) => (
-                    <div key={i} className="flex-1 bg-stone-100 rounded-t-lg relative group">
-                      <div 
-                        className={`absolute bottom-0 w-full rounded-t-lg transition-all duration-1000 ${i === 6 ? 'bg-lime-500' : 'bg-orange-400 group-hover:bg-orange-500'}`}
-                        style={{ height: `${height}%` }}
-                      ></div>
-                    </div>
-                  ))}
+                {/* Vendor receives block */}
+                <div className="bg-[#75B737] rounded-[16px] p-6 flex flex-col justify-center">
+                  <span className="text-white text-[13px] font-bold mb-2">
+                    Vendor receives
+                  </span>
+                  <span className="text-white text-[2.5rem] md:text-5xl font-black leading-none tracking-tight">
+                    95%
+                  </span>
                 </div>
-                
-                <div className="flex justify-between text-xs text-stone-400 font-bold mt-2">
-                  <span>Mon</span>
-                  <span>Tue</span>
-                  <span>Wed</span>
-                  <span>Thu</span>
-                  <span>Fri</span>
-                  <span>Sat</span>
-                  <span>Sun</span>
+
+                {/* Platform fee block */}
+                <div className="bg-[#E96424] rounded-[16px] p-6 flex flex-col justify-center">
+                  <span className="text-white text-[13px] font-bold mb-2">
+                    Dar Dar platform fee
+                  </span>
+                  <span className="text-white text-[2.5rem] md:text-5xl font-black leading-none tracking-tight">
+                    5%
+                  </span>
                 </div>
-             </div>
+
+              </div>
+
+            </div>
           </div>
-          
+
         </div>
       </Container>
     </section>
