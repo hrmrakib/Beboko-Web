@@ -10,7 +10,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Beboto Web",
+  title: "Dar Dar Food & Groceries, Delivered",
   description: "Food, groceries and everyday essentials delivered to your door.",
 };
 
