@@ -47,7 +47,7 @@ export function DeliveryPartnerSection() {
   const { openPartnerModal } = useModals();
 
   return (
-    <section className="py-20 lg:py-28 bg-[#FFFFFF] overflow-hidden border-y-[2px] border-[#FEF0EA]">
+    <section id="delivery-partners" className="py-20 lg:py-28 bg-[#FFFFFF] overflow-hidden border-y-[2px] border-[#FEF0EA]">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           

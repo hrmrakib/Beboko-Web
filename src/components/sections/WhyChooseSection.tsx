@@ -85,7 +85,7 @@ const features = [
 
 export function WhyChooseSection() {
   return (
-    <section className="py-20 lg:py-28 bg-[#FAFAFA]">
+    <section id="about" className="py-20 lg:py-28 bg-[#FAFAFA]">
       <Container>
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 px-4">

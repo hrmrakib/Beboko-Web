@@ -12,12 +12,12 @@ export function Header() {
   const { openPartnerModal } = useModals();
 
   const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'How It Works', href: '/how-it-works' },
-    { name: 'Food & Groceries', href: '/food-groceries' },
-    { name: 'For Vendors', href: '/for-vendors' },
-    { name: 'Delivery Partners', href: '/delivery-partners' },
-    { name: 'About Dar Dar', href: '/about' },
+    { name: 'Home', href: '#home' },
+    { name: 'How It Works', href: '#how-it-works' },
+    { name: 'Food & Groceries', href: '#food-groceries' },
+    { name: 'For Vendors', href: '#for-vendors' },
+    { name: 'Delivery Partners', href: '#delivery-partners' },
+    { name: 'About Dar Dar', href: '#about' },
   ];
 
   return (

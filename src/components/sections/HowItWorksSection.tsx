@@ -31,7 +31,7 @@ export function HowItWorksSection() {
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-white">
+    <section id="how-it-works" className="py-20 lg:py-28 bg-white">
       <Container>
         <div className="text-center max-w-2xl mx-auto mb-16 lg:mb-24 px-4">
           <h2 className="text-[11px] font-bold text-[#E96424] tracking-[0.2em] uppercase mb-4">

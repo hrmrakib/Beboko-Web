@@ -5,7 +5,7 @@ import { StarIcon } from '../ui/Icons';
 
 export function HeroSection() {
   return (
-    <section className="relative pt-16 pb-24 bg-white overflow-hidden">
+    <section id="home" className="relative pt-16 pb-24 bg-white overflow-hidden">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Content */}

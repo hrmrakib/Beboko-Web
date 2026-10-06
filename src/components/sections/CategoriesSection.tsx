@@ -3,7 +3,7 @@ import { Container } from '../layout/Container';
 
 export function CategoriesSection() {
   return (
-    <section className="pt-12 lg:pt-16 pb-0 bg-[#FFFFFF] overflow-hidden">
+    <section id="food-groceries" className="pt-12 lg:pt-16 pb-0 bg-[#FFFFFF] overflow-hidden">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           
