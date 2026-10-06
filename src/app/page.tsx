@@ -11,6 +11,13 @@ import { BusinessSection } from '@/components/sections/BusinessSection';
 import { StatsSection } from '@/components/sections/StatsSection';
 import { DashboardSection } from '@/components/sections/DashboardSection';
 import { DeliveryPartnerSection } from '@/components/sections/DeliveryPartnerSection';
+import { VendorEcosystemSection } from '@/components/sections/VendorEcosystemSection';
+import { PlatformExperiencesSection } from '@/components/sections/PlatformExperiencesSection';
+import { CustomerSupportSection } from '@/components/sections/CustomerSupportSection';
+import { WhyChooseSection } from '@/components/sections/WhyChooseSection';
+import { TestimonialsSection } from '@/components/sections/TestimonialsSection';
+import { FAQSection } from '@/components/sections/FAQSection';
+import { AppDownloadSection } from '@/components/sections/AppDownloadSection';
 import { Footer } from '@/components/layout/Footer';
 
 export default function Home() {
@@ -30,6 +37,13 @@ export default function Home() {
         <StatsSection />
         <DashboardSection />
         <DeliveryPartnerSection />
+        <VendorEcosystemSection />
+        <PlatformExperiencesSection />
+        <CustomerSupportSection />
+        <WhyChooseSection />
+        <TestimonialsSection />
+        <FAQSection />
+        <AppDownloadSection />
       </main>
       <Footer />
     </>

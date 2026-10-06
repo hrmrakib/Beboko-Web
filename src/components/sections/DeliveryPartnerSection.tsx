@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container } from '../layout/Container';
+import Image from 'next/image';
 
 const CheckIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" {...props}>
@@ -42,12 +43,12 @@ const features = [
 
 export function DeliveryPartnerSection() {
   return (
-    <section className="py-20 lg:py-28 bg-[#FFFFFF] overflow-hidden">
+    <section className="py-20 lg:py-28 bg-[#FFFFFF] overflow-hidden border-y-[2px] border-[#FEF0EA]">
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           
           {/* Left Side: Content */}
-          <div className="order-2 lg:order-1">
+          <div className="order-2 lg:order-1 flex flex-col justify-center">
             <h2 className="text-[11px] font-bold text-[#E96424] tracking-[0.2em] uppercase mb-4">
               FOR DELIVERY PARTNERS
             </h2>
@@ -88,12 +89,14 @@ export function DeliveryPartnerSection() {
           </div>
           
           {/* Right Side: Image */}
-          <div className="order-1 lg:order-2 relative w-full flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[550px]">
-              <img 
-                src="/images/rider.png" 
+          <div className="order-1 lg:order-2 relative w-full h-full flex justify-center lg:justify-end">
+            <div className="relative w-full h-[400px] sm:h-[500px] lg:h-auto lg:min-h-full max-w-[550px] lg:max-w-none">
+              <Image 
+                src="/images/pickup.jpg" 
                 alt="Delivery Rider" 
-                className="w-full h-auto object-cover rounded-[2rem] lg:rounded-[3rem]"
+                width={1200}
+                height={1200}
+                className="absolute lg:absolute inset-0 w-full h-full object-cover rounded-[2rem] lg:rounded-[3rem]"
               />
               
               {/* Floating Card */}
