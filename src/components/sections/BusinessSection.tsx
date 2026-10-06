@@ -1,7 +1,10 @@
+'use client';
 import React from 'react';
 import { Container } from '../layout/Container';
+import { useModals } from '../modals/ModalProvider';
 
 export function BusinessSection() {
+  const { openPartnerModal } = useModals();
   const features = [
     { id: '01', title: 'Reach More Customers' },
     { id: '02', title: 'Manage Products' },
@@ -62,7 +65,7 @@ export function BusinessSection() {
               ))}
             </div>
 
-            <button className="bg-[#E96424] hover:bg-[#d6571b] text-white px-8 py-4 rounded-full text-[15px] font-bold inline-flex items-center gap-2 transition-colors shadow-lg shadow-orange-500/20">
+            <button onClick={() => openPartnerModal('vendor')} className="bg-[#E96424] hover:bg-[#d6571b] text-white px-8 py-4 rounded-full text-[15px] font-bold inline-flex items-center gap-2 transition-colors shadow-lg shadow-orange-500/20">
               Become a Dar Dar Vendor
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>

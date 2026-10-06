@@ -5,9 +5,11 @@ import Link from 'next/link';
 import { MenuIcon, CloseIcon } from '../ui/Icons';
 import { Button } from '../ui/Button';
 import { Container } from './Container';
+import { useModals } from '../modals/ModalProvider';
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { openPartnerModal } = useModals();
 
   const navLinks = [
     { name: 'Home', href: '/' },
@@ -45,6 +47,7 @@ export function Header() {
             <Button 
               variant="outline" 
               className="border-[#E96424] text-[#E96424] hover:bg-[#E96424] hover:text-white hover:border-[#E96424] px-6 py-2.5 h-auto text-[15px]"
+              onClick={() => openPartnerModal('vendor')}
             >
               Become a Vendor
             </Button>
@@ -95,6 +98,10 @@ export function Header() {
                 variant="outline" 
                 fullWidth
                 className="border-[#E96424] text-[#E96424] hover:bg-[#E96424] hover:text-white"
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  openPartnerModal('vendor');
+                }}
               >
                 Become a Vendor
               </Button>

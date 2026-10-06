@@ -1,6 +1,8 @@
+'use client';
 import React from 'react';
 import { Container } from '../layout/Container';
 import Image from 'next/image';
+import { useModals } from '../modals/ModalProvider';
 
 const CheckIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" {...props}>
@@ -42,6 +44,8 @@ const features = [
 ];
 
 export function DeliveryPartnerSection() {
+  const { openPartnerModal } = useModals();
+
   return (
     <section className="py-20 lg:py-28 bg-[#FFFFFF] overflow-hidden border-y-[2px] border-[#FEF0EA]">
       <Container>
@@ -79,13 +83,15 @@ export function DeliveryPartnerSection() {
               })}
             </div>
             
-            <button className="bg-[#E96424] hover:bg-[#d6571b] text-white px-8 py-4 rounded-full text-[15px] font-bold inline-flex items-center gap-2 transition-colors shadow-[0_8px_25px_rgb(233,100,36,0.35)]">
-              Become a Delivery Partner
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </button>
+            <div className="flex justify-center lg:justify-start w-full">
+              <button onClick={() => openPartnerModal('delivery')} className="bg-[#E96424] hover:bg-[#d6571b] text-white px-8 py-4 rounded-full text-[15px] font-bold inline-flex items-center justify-center gap-2 transition-colors shadow-[0_8px_25px_rgb(233,100,36,0.35)]">
+                Become a Delivery Partner
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
           </div>
           
           {/* Right Side: Image */}
