@@ -9,7 +9,7 @@ export function CategoriesSection() {
           
           {/* Left Side: Content */}
           <div className="order-1">
-            <h2 className="text-[11px] font-bold text-[#E96424] tracking-[0.2em] uppercase mb-4">
+            <h2 className="text-base font-bold text-[#E96424] tracking-[0.2em] uppercase mb-4">
               Shop local
             </h2>
             <h3 className="text-[2.5rem] md:text-5xl font-black text-[#323232] mb-6 leading-[1.6] tracking-tight">

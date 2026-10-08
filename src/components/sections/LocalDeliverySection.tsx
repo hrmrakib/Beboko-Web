@@ -20,7 +20,7 @@ export function LocalDeliverySection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           
           {/* Card 1 */}
-          <div className="rounded-[24px] overflow-hidden bg-[#FFF5EE] shadow-[0_4px_20px_rgb(0,0,0,0.03)] group transition-transform hover:-translate-y-1 duration-300">
+          <div className="rounded-[24px] overflow-hidden bg-[#FEEFE9] shadow-[0_4px_20px_rgb(0,0,0,0.03)] group transition-transform hover:-translate-y-1 duration-300">
             <div className="h-[280px] w-full overflow-hidden">
                <img 
                  src="/images/rider.png" 
@@ -42,7 +42,7 @@ export function LocalDeliverySection() {
           </div>
 
           {/* Card 2 */}
-          <div className="rounded-[24px] overflow-hidden bg-[#FFF5EE] shadow-[0_4px_20px_rgb(0,0,0,0.03)] group transition-transform hover:-translate-y-1 duration-300">
+          <div className="rounded-[24px] overflow-hidden bg-[#FEEFE9] shadow-[0_4px_20px_rgb(0,0,0,0.03)] group transition-transform hover:-translate-y-1 duration-300">
             <div className="h-[280px] w-full overflow-hidden">
                <img 
                  src="/images/delivery-cargo.png" 
