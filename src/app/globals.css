@@ -11,15 +11,21 @@
   --font-sans: var(--font-poppins), sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
 }
+
+/* Ensure all form controls in modals and pages render typed input text in crisp black */
+input:not([type="checkbox"]):not([type="radio"]),
+textarea,
+select {
+  color: #000000 !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #B3B3B3;
+}
+

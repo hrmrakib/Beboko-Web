@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import { ModalProvider } from "@/components/modals/ModalProvider";
+import { StoreProvider } from "@/redux";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -21,9 +22,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${poppins.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans">
-        <ModalProvider>
-          {children}
-        </ModalProvider>
+        <StoreProvider>
+          <ModalProvider>
+            {children}
+          </ModalProvider>
+        </StoreProvider>
       </body>
     </html>
   );
