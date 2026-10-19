@@ -75,6 +75,7 @@ export function Footer() {
               <div>
                 <h4 className="text-white font-bold text-[15px] mb-5 lg:mb-6">Legal & Admin</h4>
                 <ul className="space-y-3 lg:space-y-4">
+                  <li><Link href="/login" className="text-[13px] text-[#CCCCCC] hover:text-white transition-colors">Sign In / Account</Link></li>
                   <li><Link href="#" className="text-[13px] text-[#CCCCCC] hover:text-white transition-colors">Privacy Policy</Link></li>
                   <li><Link href="#" className="text-[13px] text-[#CCCCCC] hover:text-white transition-colors">Terms & Conditions</Link></li>
                   <li><button onClick={() => openAdminModal()} className="text-[13px] text-[#E96424] hover:text-white transition-colors text-left font-semibold">Admin Portal</button></li>
@@ -116,7 +117,7 @@ export function Footer() {
               <span className="text-[#808080]">
                 Food &amp; groceries delivery platform
               </span>
-              <p className="flex items-center gap-1.5 text-[#B0B0B0]">
+              {/* <p className="flex items-center gap-1.5 text-[#B0B0B0]">
                 <span>Developed by</span>
                 <a
                   href="https://www.linkedin.com/in/hrmrakib/"
@@ -139,7 +140,7 @@ export function Footer() {
                     <line x1="10" y1="14" x2="21" y2="3"></line>
                   </svg>
                 </a>
-              </p>
+              </p> */}
             </div>
           </div>
         </div>

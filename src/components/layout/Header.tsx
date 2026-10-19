@@ -44,6 +44,16 @@ export function Header() {
 
           {/* Actions */}
           <div className="hidden lg:flex items-center gap-3">
+            <Link
+              href="/login"
+              className="text-[14px] font-bold text-stone-700 hover:text-[#E96424] px-3 py-2 flex items-center gap-1.5 transition-colors"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              Sign In
+            </Link>
             <button
               onClick={() => openTrackModal()}
               className="text-[14px] font-bold text-stone-700 hover:text-[#E96424] px-3 py-2 flex items-center gap-1.5 transition-colors"
@@ -104,6 +114,17 @@ export function Header() {
               </Link>
             ))}
             <div className="mt-4 pt-4 border-t border-stone-100 flex flex-col gap-3">
+              <Link
+                href="/login"
+                className="w-full py-3 rounded-xl border border-[#E96424] text-[#E96424] font-bold text-[15px] flex items-center justify-center gap-2 hover:bg-orange-50 transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                Sign In to Account
+              </Link>
               <button
                 className="w-full py-3 rounded-xl border border-stone-200 text-stone-700 font-bold text-[15px] flex items-center justify-center gap-2 hover:bg-stone-50"
                 onClick={() => {
