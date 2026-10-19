@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import { ModalProvider } from "@/components/modals/ModalProvider";
 import { StoreProvider } from "@/redux";
+import { GoogleTranslate } from "@/components/common/GoogleTranslate";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -25,6 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <StoreProvider>
           <ModalProvider>
             {children}
+            <GoogleTranslate />
           </ModalProvider>
         </StoreProvider>
       </body>
