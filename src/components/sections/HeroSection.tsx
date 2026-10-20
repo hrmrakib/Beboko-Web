@@ -69,7 +69,7 @@ export function HeroSection() {
                   <StarIcon className="w-4 h-4 fill-current" />
                 </div>
                 <span className="text-[13px] font-medium text-[#666666]">
-                  Loved by 10,000+ customers
+                  Loved by 0 customers
                 </span>
               </div>
             </div>

@@ -12,10 +12,10 @@ export function LanguageSwitcher({
   variant = 'desktop',
   className = '',
 }: LanguageSwitcherProps) {
-  const [currentLang, setCurrentLang] = useState<'en' | 'fr'>('en');
+  const [currentLang, setCurrentLang] = useState<'en' | 'fr'>('fr');
 
   useEffect(() => {
-    // Read initial language on client mount
+    // Read initial language on client mount (defaults to 'fr')
     const initial = getCurrentLanguage();
     setCurrentLang(initial);
 
@@ -26,8 +26,18 @@ export function LanguageSwitcher({
       }
     };
 
+    const handleLanguageChange = (e: any) => {
+      if (e?.detail && (e.detail === 'en' || e.detail === 'fr')) {
+        setCurrentLang(e.detail);
+      }
+    };
+
     window.addEventListener('focus', handleFocus);
-    return () => window.removeEventListener('focus', handleFocus);
+    window.addEventListener('app_language_change', handleLanguageChange);
+    return () => {
+      window.removeEventListener('focus', handleFocus);
+      window.removeEventListener('app_language_change', handleLanguageChange);
+    };
   }, [currentLang]);
 
   const handleSelectLanguage = (lang: 'en' | 'fr') => {

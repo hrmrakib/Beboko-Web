@@ -112,7 +112,7 @@ export function DeliveryPartnerSection() {
                 </div>
                 <div>
                   <p className="text-[13px] text-[#666666] font-medium leading-tight mb-1">New request</p>
-                  <p className="text-[16px] text-[#323232] font-black leading-tight">Pickup in Matete</p>
+                  <p className="text-[16px] text-[#323232] font-black leading-tight">Pickup in Gombe</p>
                 </div>
               </div>
             </div>

@@ -63,7 +63,7 @@ export function NotFoundView() {
 
       {/* Footer */}
       <footer className="w-full text-center py-4 text-white/80 text-xs">
-        <p>© {new Date().getFullYear()} Dar Dar by ETHOZ Group. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Dar Dar by ETHOZ Group SARLU. All rights reserved.</p>
       </footer>
 
       {/* Demo Switcher */}

@@ -23,20 +23,20 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white backdrop-blur-md shadow-sm">
-      <Container>
-        <div className="flex items-center justify-between h-24">
+      <div className="w-full max-w-[2560px] mx-auto px-4 sm:px-6 xl:px-8">
+        <div className="flex items-center justify-between h-20 xl:h-22">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
-            <img src="/logo.png" alt="Dar Dar Logo" className="h-[60px] w-auto object-contain bg-[#333333] rounded-xl px-2 py-1" />
+            <img src="/logo.png" alt="Dar Dar Logo" className="h-[48px] xl:h-[54px] w-auto object-contain bg-[#333333] rounded-xl px-2 py-1" />
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-4 xl:gap-6">
+          {/* Desktop Navigation (active from xl: 1280px+) */}
+          <nav className="hidden xl:flex items-center gap-2 2xl:gap-4.5">
             {navLinks.map((link) => (
               <Link 
                 key={link.name} 
                 href={link.href}
-                className="text-[14px] xl:text-[15px] font-bold text-stone-700 hover:text-[#E96424] transition-colors whitespace-nowrap"
+                className="text-[13px] 2xl:text-[14px] font-semibold text-stone-700 hover:text-[#E96424] transition-colors whitespace-nowrap px-1 py-0.5"
               >
                 {link.name}
               </Link>
@@ -44,32 +44,36 @@ export function Header() {
           </nav>
 
           {/* Actions */}
-          <div className="hidden lg:flex items-center gap-2 xl:gap-3 flex-shrink-0">
+          <div className="hidden xl:flex items-center gap-2 xl:gap-2.5 2xl:gap-3 flex-shrink-0">
             {/* Language Switcher (English <-> French via Google Translate) */}
             <LanguageSwitcher variant="desktop" />
+            {/* Track Application */}
             <button
               onClick={() => openTrackModal()}
-              className="text-[13px] xl:text-[14px] font-bold text-stone-700 hover:text-[#E96424] px-2 xl:px-3 py-2 flex items-center gap-1.5 transition-colors whitespace-nowrap"
+              title="Track Application"
+              className="text-[12.5px] 2xl:text-[13px] font-bold text-stone-700 hover:text-[#E96424] px-2.5 py-1.5 flex items-center gap-1.5 transition-colors whitespace-nowrap rounded-lg hover:bg-stone-50"
             >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="text-stone-500">
                 <circle cx="11" cy="11" r="8"></circle>
                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
               </svg>
-              Track Application
+              <span className="hidden 2xl:inline">Track Application</span>
             </button>
-            <Button 
-              variant="outline" 
-              className="border-[#E96424] text-[#E96424] hover:bg-[#E96424] hover:text-white hover:border-[#E96424] px-3.5 xl:px-5 py-2 xl:py-2.5 h-auto text-[13px] xl:text-[14px] whitespace-nowrap"
-              onClick={() => openPartnerModal('vendor')}
-            >
-              Become a Vendor
-            </Button>
+            <div className="hidden 2xl:block">
+              <Button 
+                variant="outline" 
+                className="border-[#E96424] text-[#E96424] hover:bg-[#E96424] hover:text-white hover:border-[#E96424] px-3.5 py-2 h-auto text-[13px] font-bold whitespace-nowrap"
+                onClick={() => openPartnerModal('vendor')}
+              >
+                Become a Vendor
+              </Button>
+            </div>
             <Button 
               variant="primary" 
-              className="bg-[#E96424] hover:bg-[#d5581c] text-white px-3.5 xl:px-5 py-2 xl:py-2.5 h-auto text-[13px] xl:text-[14px] whitespace-nowrap"
+              className="bg-[#E96424] hover:bg-[#d5581c] text-white px-3.5 2xl:px-4 py-2 h-auto text-[13px] font-bold whitespace-nowrap shadow-sm"
               iconPosition="right"
               icon={
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                   <polyline points="7 10 12 15 17 10"></polyline>
                   <line x1="12" y1="15" x2="12" y2="3"></line>
@@ -80,21 +84,23 @@ export function Header() {
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="lg:hidden flex items-center">
+          {/* Mobile Menu Button & Quick Switcher (< xl) */}
+          <div className="xl:hidden flex items-center gap-2">
+            <LanguageSwitcher variant="desktop" className="mr-1" />
             <button 
-              className="p-2 text-stone-600 hover:text-[#E96424] focus:outline-none"
+              className="p-2 text-stone-600 hover:text-[#E96424] focus:outline-none rounded-lg hover:bg-stone-100 transition-colors"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
             </button>
           </div>
         </div>
-      </Container>
+      </div>
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-stone-100 absolute w-full left-0 shadow-lg">
+        <div className="xl:hidden bg-white border-t border-stone-100 absolute w-full left-0 shadow-xl max-h-[calc(100vh-80px)] overflow-y-auto">
           <div className="px-4 pt-2 pb-6 space-y-1">
             {navLinks.map((link) => (
               <Link

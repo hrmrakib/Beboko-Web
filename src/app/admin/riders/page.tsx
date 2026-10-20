@@ -18,7 +18,7 @@ const initialRiders: RiderItem[] = [
     name: 'Faysal Rahman',
     phone: '+1 (239) 555-0108',
     vehicle: 'Motorbike (Honda 125)',
-    area: 'Matete, Kinshasa',
+    area: 'Gombe, Kinshasa',
     status: 'PENDING',
     avatar: '/images/avatar-1.png',
   },

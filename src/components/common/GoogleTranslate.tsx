@@ -11,6 +11,16 @@ declare global {
 
 export function GoogleTranslate() {
   useEffect(() => {
+    // 0. Ensure default French cookie on first visit
+    try {
+      const stored = localStorage.getItem('preferred_language');
+      if (!stored) {
+        localStorage.setItem('preferred_language', 'fr');
+        document.cookie = 'googtrans=/en/fr; path=/;';
+        document.cookie = 'googtrans=/auto/fr; path=/;';
+      }
+    } catch (e) {}
+
     // 1. Define translation init callback
     window.googleTranslateElementInit = () => {
       try {
@@ -24,6 +34,14 @@ export function GoogleTranslate() {
             },
             'google_translate_element'
           );
+
+          // Once initialized, ensure active language is selected
+          const activeLang = getCurrentLanguage();
+          const combo = document.querySelector('.goog-te-combo') as HTMLSelectElement | null;
+          if (combo && combo.value !== activeLang) {
+            combo.value = activeLang;
+            combo.dispatchEvent(new Event('change'));
+          }
         }
       } catch (err) {
         console.error('Google Translate init error:', err);
@@ -43,6 +61,27 @@ export function GoogleTranslate() {
     } else if (window.google?.translate && window.googleTranslateElementInit) {
       window.googleTranslateElementInit();
     }
+
+    // 3. Periodic check to ensure target language is applied to combo once mounted
+    const intervalId = setInterval(() => {
+      const activeLang = getCurrentLanguage();
+      const combo = document.querySelector('.goog-te-combo') as HTMLSelectElement | null;
+      if (combo) {
+        if (combo.value !== activeLang) {
+          combo.value = activeLang;
+          combo.dispatchEvent(new Event('change'));
+        }
+      }
+    }, 300);
+
+    const timeoutId = setTimeout(() => {
+      clearInterval(intervalId);
+    }, 3500);
+
+    return () => {
+      clearInterval(intervalId);
+      clearTimeout(timeoutId);
+    };
   }, []);
 
   return (
@@ -66,24 +105,35 @@ export function GoogleTranslate() {
 
 /**
  * Helper to get current active language ('en' | 'fr')
+ * Defaults to 'fr' on first visit
  */
 export function getCurrentLanguage(): 'en' | 'fr' {
-  if (typeof document === 'undefined') return 'en';
+  if (typeof window === 'undefined') return 'fr';
 
-  const cookies = document.cookie.split(';');
-  for (const cookie of cookies) {
-    const trimmed = cookie.trim();
-    if (trimmed.startsWith('googtrans=')) {
-      const val = trimmed.split('=')[1];
-      if (val && val.includes('/fr')) return 'fr';
-      if (val && val.includes('/en')) return 'en';
+  try {
+    const stored = localStorage.getItem('preferred_language');
+    if (stored === 'en') return 'en';
+    if (stored === 'fr') return 'fr';
+  } catch (e) {}
+
+  if (typeof document !== 'undefined') {
+    const cookies = document.cookie.split(';');
+    for (const cookie of cookies) {
+      const trimmed = cookie.trim();
+      if (trimmed.startsWith('googtrans=')) {
+        const val = trimmed.split('=')[1];
+        if (val) {
+          const parts = val.split('/');
+          const target = parts[parts.length - 1];
+          if (target === 'en') return 'en';
+          if (target === 'fr') return 'fr';
+        }
+      }
     }
   }
 
-  const stored = localStorage.getItem('preferred_language');
-  if (stored === 'fr') return 'fr';
-
-  return 'en';
+  // DEFAULT IS FRENCH ON FIRST VISIT
+  return 'fr';
 }
 
 /**
@@ -92,18 +142,24 @@ export function getCurrentLanguage(): 'en' | 'fr' {
 export function setGoogleTranslateLanguage(targetLang: 'en' | 'fr') {
   if (typeof window === 'undefined') return;
 
-  const cookieVal = `/en/${targetLang}`;
-
-  // Set cookie for path=/ and current domain
-  document.cookie = `googtrans=${cookieVal}; path=/;`;
-  const domain = window.location.hostname;
-  document.cookie = `googtrans=${cookieVal}; path=/; domain=${domain};`;
-
   try {
     localStorage.setItem('preferred_language', targetLang);
   } catch (e) {
     // ignore local storage error
   }
+
+  const cookieVal = `/en/${targetLang}`;
+
+  // Set cookie for path=/ and current domain
+  document.cookie = `googtrans=${cookieVal}; path=/;`;
+  const domain = window.location.hostname;
+  if (domain && domain !== 'localhost' && !domain.match(/^(\d{1,3}\.){3}\d{1,3}$/)) {
+    document.cookie = `googtrans=${cookieVal}; path=/; domain=${domain};`;
+    document.cookie = `googtrans=${cookieVal}; path=/; domain=.${domain};`;
+  }
+
+  // Broadcast custom event so LanguageSwitcher components update immediately
+  window.dispatchEvent(new CustomEvent('app_language_change', { detail: targetLang }));
 
   // Trigger change on Google's combo select box if mounted
   const combo = document.querySelector('.goog-te-combo') as HTMLSelectElement | null;

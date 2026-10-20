@@ -122,8 +122,8 @@ export function MapSection() {
             <div className="w-full max-w-[380px] sm:max-w-[420px] lg:max-w-[440px] flex flex-col items-center">
               {/* Floating Order Status Map Image */}
               <img
-                src="/images/order-status.png"
-                alt="Order Status Tracking"
+                src="/images/order-status2.png"
+                alt="Order Status Tracking" 
                 className="w-full h-auto object-contain select-none"
               />
 

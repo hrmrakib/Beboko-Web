@@ -20,11 +20,11 @@ export function Footer() {
               Food, groceries and everyday <br className="hidden xl:block" /> essentials delivered to your door.
             </p>
             <div>
-              <h5 className="font-bold text-white text-[15px] mb-1">ETHOZ Group</h5>
+              <h5 className="font-bold text-white text-[15px] mb-1">ETHOZ Group SARLU</h5>
               <p className="text-[#8DC63F] text-[14px] mb-6">ethozsarl@gmail.com</p>
               
-              <p className="text-[13px] text-[#CCCCCC] mb-1.5">Quartier Mongo 13/A</p>
-              <p className="text-[13px] text-[#CCCCCC] mb-1.5">City of Matete</p>
+              {/* <p className="text-[13px] text-[#CCCCCC] mb-1.5">Quartier Mongo 13/A</p> */}
+              {/* <p className="text-[13px] text-[#CCCCCC] mb-1.5">City of Gombe</p> */}
               <p className="text-[13px] text-[#CCCCCC] mb-1.5">Province of Kinshasa</p>
               <p className="text-[13px] text-[#CCCCCC]">Democratic Republic of Congo</p>
             </div>
@@ -108,7 +108,7 @@ export function Footer() {
               </p>
 
               <p className="text-[12px] text-[#CCCCCC]">
-                Dar Dar is part of ETHOZ Group.
+                Dar Dar is part of ETHOZ Group SARLU.
               </p>
             </div>
 
