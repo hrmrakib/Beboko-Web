@@ -7,23 +7,23 @@ export function HeroSection() {
   return (
     <section id="home" className="relative pt-16 pb-24 bg-white overflow-hidden">
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 xl:gap-8 items-center">
           {/* Content */}
-          <div className="order-2 lg:order-1 max-w-xl animate-in slide-in-from-bottom-8 duration-700 fade-in text-center lg:text-left mx-auto lg:mx-0">
+          <div className="order-2 lg:order-1 w-full animate-in slide-in-from-bottom-8 duration-700 fade-in text-center lg:text-left">
             <div className="text-[#E96424] text-[10px] sm:text-xs font-bold tracking-widest uppercase mb-4">
               FOOD • GROCERIES • LOCAL DELIVERY
             </div>
             
-            <h1 className="text-4xl sm:text-5xl md:text-[4.5rem] lg:text-[5.5rem] font-black text-[#323232] leading-[1.1] lg:leading-[1.05] mb-6 tracking-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-[4.2rem] lg:text-[4.6rem] xl:text-[5.2rem] font-black text-[#323232] leading-[1.1] lg:leading-[1.05] mb-6 tracking-tight">
               Your Food & <br />
               Groceries, <br />
               <span className="text-[#E96424]">Delivered.</span>
             </h1>
             
-            <p className="text-base sm:text-lg text-[#666666] mb-4 max-w-[480px] mx-auto lg:mx-0 leading-relaxed">
+            <p className="text-base sm:text-lg text-[#666666] mb-4 max-w-[520px] mx-auto lg:mx-0 leading-relaxed">
               Order meals, groceries and everyday essentials from local restaurants, supermarkets and trusted vendors — all from one simple app.
             </p>
-            <p className="text-base sm:text-lg text-[#323232] font-medium mb-8 sm:mb-10 max-w-[480px] mx-auto lg:mx-0">
+            <p className="text-base sm:text-lg text-[#323232] font-medium mb-8 sm:mb-10 max-w-[520px] mx-auto lg:mx-0">
               Fast, convenient and built for everyday life in Kinshasa.
             </p>
             
@@ -76,11 +76,11 @@ export function HeroSection() {
           </div>
           
           {/* Image Area */}
-          <div className="order-1 lg:order-2 relative animate-in slide-in-from-right-8 duration-1000 fade-in delay-200 flex justify-center lg:justify-end mb-8 lg:mb-0">
+          <div className="order-1 lg:order-2 w-full relative animate-in slide-in-from-right-8 duration-1000 fade-in delay-200 flex justify-center lg:justify-start xl:justify-center items-center mb-8 lg:mb-0">
             <img 
               src="/images/hero-phone.png" 
               alt="App Mockup" 
-              className="w-full max-w-[600px] h-auto object-contain"
+              className="w-full max-w-[500px] lg:max-w-[540px] xl:max-w-[600px] h-auto object-contain select-none"
             />
           </div>
         </div>
